@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Caixa Registradora</title>
+		<meta charset="UTF-8">
+		<script src="Pedido.js"></script>
+		<script src="Calculo.js"></script>
+	</head>
+
+	<body>
+		<h1>Caixa Registradora</h1>
+		<fieldset id="registrar" style="display: block">
+			<legend>Registrar Itens</legend>
+				<form>
+					<div>
+						<label for="produto">Produto: </label>
+						<input type="text" name="produto" id="produto"/>
+					</div>
+					<div>
+						<label for="preco">Preço: </label>
+						<input type="text" name="preco" id="preco"/>
+					</div>
+					<div>
+						<label for="quantidade">Quantidade: </label>
+						<input type="text" name="quantidade" id="quantidade"/>
+					</div>
+					<div>
+						<input type="button" value="Inserir" onclick="cadastrarItemPedido()"/>
+						<input type="button" value="Fim" onclick="esconderRegistrar()"/>
+					</div>
+				</form>			
+		</fieldset>
+		<input type="button" value="Registrar Itens" id="mostrarRegistrar" onclick="mostrarRegistrar()" style="display:none" />
+		<fieldset>
+			<legend>Lista de Itens</legend>
+			<table border="1" id="vendas">
+				<tr>
+					<td>Produto</td>
+					<td>Preço</td>
+					<td>Quantidade</td>
+					<td>Valor Total</td>
+				</tr>
+			</table>
+			<div>
+				<input type="button" value="Totalizar" onclick="calcularTotal()"/>
+			</div>
+		<fieldset>
+			<legend>Total</legend>
+
+			<form>
+				<div>
+					Total a Pagar:
+					<input type="text" name="totalAPagar" id = "totalAPagar" readonly/>
+				</div>
+				<div>
+					<label for="recebido">Recebido: </label>
+					<input type="text" name="recebido" id="recebido"/>
+					<input type="button" value="Encerrar" onclick="calcularTroco()"/>
+				</div>
+				<div>
+					Troco:
+					<input type="text" name="troco" id="troco" readonly/>
+				</div>
+			</form>
+
+
+		</fieldset>
+
+	</body>
+
+</html>
